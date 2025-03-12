@@ -1,0 +1,27 @@
+body
+{
+    background-color: #eed7089d;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwvD_ZCOCMPfrwT8CsYdMtGifq2mcSZAST3A&s");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+h1
+{
+    color: blue;
+    text-align: center;
+    font-family: arial, verdana, sans-serif;
+}
+
+p
+{
+    color: green;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+}
+
+h2
+{
+    text-align: center;
+    color: brown;
+}
