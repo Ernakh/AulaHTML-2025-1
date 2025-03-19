@@ -18,10 +18,64 @@ p
     color: green;
     font-family: "Times New Roman", serif;
     font-style: italic;
+    font-weight: 100;
+    font-size: 30px;
+    text-indent: 30px;
+    text-align: justify;
+    letter-spacing: 5px;
+}
+
+span
+{
+    text-decoration: line-through;
+    text-transform: uppercase;
 }
 
 h2
 {
     text-align: center;
     color: brown;
+}
+
+a
+{
+    color: blue;
+}
+
+a:visited
+{
+    color: purple;
+}
+
+a:hover
+{
+    color: red;
+    text-decoration: overline;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+a.branco
+{
+    color: grey;
+}
+a.tinto
+{
+    color: purple;
+}
+a.tinto:hover
+{
+    color: red;
+}
+
+.textovinhos
+{
+    font-size: 15px;
+    color: purple;
+    letter-spacing: 2px;
+}
+
+#merlot
+{
+    color: black;
 }
