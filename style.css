@@ -79,3 +79,24 @@ a.tinto:hover
 {
     color: black;
 }
+
+#sec1
+{
+    width: 50%;
+    border: 2px solid black;
+}
+
+#h1
+{
+    padding: 0px 00px 0px 0px;
+    margin: 10px 255px 30px 8px;
+    text-align: left;
+    border: 2px solid black;
+}
+
+#p1
+{
+    margin: 10px 30px 10px 30px;
+    padding: 10px 70px 8px 8px;
+    border: 2px dotted black;
+}
