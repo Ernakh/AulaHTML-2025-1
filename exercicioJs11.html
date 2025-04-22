@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Frutas</title>
+</head>
+<body>
+
+  <h2>Escolha suas frutas favoritas:</h2>
+
+  <div class="frutas">
+    <label><input type="checkbox" onchange="contarSelecionadas()"> Maçã</label><br>
+    <label><input type="checkbox" onchange="contarSelecionadas()"> Banana</label><br>
+    <label><input type="checkbox" onchange="contarSelecionadas()"> Laranja</label><br>
+    <label><input type="checkbox" onchange="contarSelecionadas()"> Uva</label><br>
+    <label><input type="checkbox" onchange="contarSelecionadas()"> Morango</label><br>
+  </div>
+
+  <div id="contador">Frutas selecionadas: 0</div>
+
+  <script>
+    function contarSelecionadas() {
+      const checkboxes = document.querySelectorAll("input[type='checkbox']");
+      let contador = 0;
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          contador++;
+        }
+      });
+
+      document.getElementById("contador").textContent = `Frutas selecionadas: ${contador}`;
+    }
+  </script>
+
+</body>
+</html>

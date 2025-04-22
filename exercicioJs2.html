@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Data e Hora Atual</title>
+</head>
+<body>
+  <button onclick="mostrarDataHora()">Mostrar data e hora</button>
+  <p id="dataHora"></p>
+
+  <script>
+    function mostrarDataHora() {
+      const agora = new Date();
+
+      const dia = String(agora.getDate()).padStart(2, '0');
+      const mes = String(agora.getMonth() + 1).padStart(2, '0'); // Mês começa do 0
+      const ano = agora.getFullYear();
+
+      const hora = String(agora.getHours()).padStart(2, '0');
+      const minuto = String(agora.getMinutes()).padStart(2, '0');
+
+      const dataHoraFormatada = `${dia}/${mes}/${ano} ${hora}:${minuto}`;
+
+      document.getElementById("dataHora").textContent = dataHoraFormatada;
+    }
+  </script>
+</body>
+</html>

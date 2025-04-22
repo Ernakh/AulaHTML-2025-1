@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Me segue!</title>
+  <style>
+    #meSegue {
+      position: absolute;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="meSegue">Me segue!</div>
+
+  <script>
+    function movendo(evento) {
+      const meSegue = document.getElementById("meSegue");
+      meSegue.style.left = `${evento.pageX + 10}px`;
+      meSegue.style.top = `${evento.pageY + 10}px`;
+    }
+
+    document.addEventListener("mousemove", movendo);
+  </script>
+</body>
+</html>

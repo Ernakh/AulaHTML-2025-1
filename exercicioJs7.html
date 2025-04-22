@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Semáforo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .semaforo {
+      width: 100px;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 0 auto 20px;
+    }
+
+    .luz {
+      width: 60px;
+      height: 60px;
+      background-color: #111;
+      margin: 10px auto;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .vermelha.acesa {
+      background-color: red;
+    }
+
+    .amarela.acesa {
+      background-color: yellow;
+    }
+
+    .verde.acesa {
+      background-color: limegreen;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Semáforo</h2>
+
+  <div class="semaforo">
+    <div class="luz vermelha" id="vermelha"></div>
+    <div class="luz amarela" id="amarela"></div>
+    <div class="luz verde" id="verde"></div>
+  </div>
+
+  <button onclick="acender('vermelha')">Vermelho</button>
+  <button onclick="acender('amarela')">Amarelo</button>
+  <button onclick="acender('verde')">Verde</button>
+
+  <script>
+    function acender(cor) {
+      const cores = ['vermelha', 'amarela', 'verde'];
+      cores.forEach(c => {
+        document.getElementById(c).classList.remove('acesa');
+      });
+      document.getElementById(cor).classList.add('acesa');
+    }
+  </script>
+
+</body>
+</html>

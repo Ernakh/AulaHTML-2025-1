@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+</head>
+<body>
+
+  <h2>Minha Lista de Tarefas</h2>
+
+  <input type="text" id="tarefaInput" placeholder="Digite uma tarefa">
+  <button onclick="adicionarTarefa()">Adicionar</button>
+
+  <ul id="listaTarefas"></ul>
+
+  <script>
+    function adicionarTarefa() {
+      const input = document.getElementById("tarefaInput");
+      const texto = input.value.trim();
+
+      if (texto === "") return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${texto}</span>
+        <button class="remove" onclick="removerTarefa(this)">Remover</button>`;
+
+      document.getElementById("listaTarefas").appendChild(li);
+      input.value = "";
+      input.focus();
+    }
+
+    function removerTarefa(botao) {
+      const li = botao.parentElement;
+      li.remove();
+    }
+  </script>
+
+</body>
+</html>

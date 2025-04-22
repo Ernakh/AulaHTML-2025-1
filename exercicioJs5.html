@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Básica</title>
+</head>
+<body>
+
+  <h2>Calculadora</h2>
+
+  <input type="number" id="num1" placeholder="Número 1">
+  <input type="number" id="num2" placeholder="Número 2">
+  <br>
+
+  <button onclick="calcular('soma')">Somar</button>
+  <button onclick="calcular('subtracao')">Subtrair</button>
+  <button onclick="calcular('multiplicacao')">Multiplicar</button>
+  <button onclick="calcular('divisao')">Dividir</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular(operacao) {
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+      const res = document.getElementById('resultado');
+
+      if (isNaN(n1) || isNaN(n2)) {
+        res.innerText = "Por favor, insira dois números válidos.";
+        return;
+      }
+
+      let resultado;
+      switch (operacao) {
+        case 'soma':
+          resultado = n1 + n2;
+          break;
+        case 'subtracao':
+          resultado = n1 - n2;
+          break;
+        case 'multiplicacao':
+          resultado = n1 * n2;
+          break;
+        case 'divisao':
+          if (n2 === 0) {
+            res.innerText = "Não é possível dividir por zero.";
+            return;
+          }
+          resultado = n1 / n2;
+          break;
+      }
+
+      res.innerText = `Resultado: ${resultado}`;
+    }
+  </script>
+
+</body>
+</html>

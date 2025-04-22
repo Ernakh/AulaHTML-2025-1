@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Cliques</title>
+</head>
+<body>
+  <button id="meuBotao">Clique aqui</button>
+  <p id="mensagem"></p>
+
+  <script>
+    let contador = 0;
+
+    const botao = document.getElementById("meuBotao");
+    const mensagem = document.getElementById("mensagem");
+
+    botao.addEventListener("click", () => {
+      contador++;
+      if (contador < 10) {
+        mensagem.textContent = `Você clicou ${contador} vez(es).`;
+      } else if (contador === 10) {
+        mensagem.textContent = "Chega, né?";
+      }
+    });
+  </script>
+</body>
+</html>

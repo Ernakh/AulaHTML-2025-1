@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulando Imagem</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      transition: 0.3s ease;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Imagem Dinâmica</h2>
+
+  <img id="imagem" src="banner.jpg" width="300" height="300" alt="Imagem">
+
+  <div>
+    <button onclick="reduzir()">Reduzir</button>
+    <button onclick="aumentar()">Aumentar</button>
+    <button onclick="trocar()">Trocar imagem</button>
+  </div>
+
+  <script>
+    const imagem = document.getElementById("imagem");
+    const imagens = [
+      "lua.jpg",
+      "banner.jpg"
+    ];
+    let imagemAtual = 0;
+
+    function reduzir() {
+      imagem.width *= 0.9;
+      imagem.height *= 0.9;
+    }
+
+    function aumentar() {
+      imagem.width *= 1.1;
+      imagem.height *= 1.1;
+    }
+
+    function trocar() {
+      imagemAtual = (imagemAtual + 1) % imagens.length;
+      imagem.src = imagens[imagemAtual];
+    }
+  </script>
+
+</body>
+</html>

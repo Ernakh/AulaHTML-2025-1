@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Caracteres</title>
+  <style>
+    .aviso {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Digite sua mensagem:</h2>
+  <textarea id="mensagem" oninput="contarCaracteres()" placeholder="Máximo de 140 caracteres"></textarea>
+  <div id="contador">0/140</div>
+
+  <script>
+    function contarCaracteres() {
+      const textarea = document.getElementById("mensagem");
+      const contador = document.getElementById("contador");
+      const limite = 140;
+
+      if (textarea.value.length > limite) {
+        textarea.value = textarea.value.substring(0, limite);
+      }
+
+      const total = textarea.value.length;
+      contador.textContent = `${total}/${limite}`;
+      
+      if (total >= limite) {
+        contador.classList.add("aviso");
+      } else {
+        contador.classList.remove("aviso");
+      }
+    }
+  </script>
+
+</body>
+</html>

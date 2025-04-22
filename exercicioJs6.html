@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mostrar Senha</title>
+</head>
+<body>
+
+  <h2>Campo de Senha</h2>
+
+  <input type="password" id="senha" placeholder="Digite sua senha">
+  <button onclick="mostrarOuOcultar()">Mostrar senha</button>
+
+  <script>
+    function mostrarOuOcultar() {
+      const campoSenha = document.getElementById("senha");
+      if (campoSenha.type === "password") {
+        campoSenha.type = "text";
+      } else {
+        campoSenha.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>
