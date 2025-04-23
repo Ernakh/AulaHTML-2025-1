@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+    <script>
+        var contador = 0;
+        function contabilizaCliques()
+        {
+            if(contador < 10)
+            {  
+                contador++;
+                document.getElementById("paragrafo").innerText = "Você clicou " + contador + " vez(es).";
+                //alert(contador);
+            }
+            else
+            {
+                //alert("Chega, né?");
+                document.getElementById("paragrafo").innerText = "Chega, né?";
+            }
+        }
+
+        function mostraDataHora()
+        {
+            var data = new Date();
+            var dia = String(data.getDate()).padStart(2, '0');
+            var mes = String(data.getMonth() + 1).padStart(2, '0');
+            var ano = data.getFullYear();
+            var hora = String(data.getHours()).padStart(2, '0');
+            var minuto = String(data.getMinutes()).padStart(2, '0');
+
+            var dataHoraFormatada = dia + "/" + mes + "/" + ano + " " + hora + ":" + minuto;
+            document.getElementById("pData").innerText = dataHoraFormatada;
+            //alert(data.toLocaleString('default', { month: 'long' }));
+        }
+
+        function moverDiv(evento)
+        {
+            const div = document.getElementById("segue");
+            //alert(evento.clientX + " " + evento.clientY);
+            div.style.left = `${evento.pageX + 10}px`;
+            div.style.top = `${evento.pageY + 10}px`;
+            //div.style.top = evento.pageY + "px";
+            
+        }
+
+        //document.addEventListener("mousemove", movendo);
+        document.addEventListener("mousemove", moverDiv);
+
+        function adicionarTarefa()
+        {
+           var tarefa = document.getElementById("tarefa").value;   
+           var lista = document.getElementById("listaTarefas");
+    
+           var li = document.createElement("li");
+           li.innerHTML = tarefa +
+                '<input type="button" value="Remover"' +
+                'onclick="removerTarefa(this)"/>';
+
+           lista.appendChild(li);
+        
+        }
+
+        function removerTarefa(botao)
+        {
+            var li = botao.parentNode;
+            li.parentNode.removeChild(li);
+        }
+
+        var indice = 0;
+        function TrocarImagem()
+        {
+            var imagens = ["banner.jpg", "lua.jpg"];
+            var imagem = document.getElementById("imagem");
+            indice++;
+
+            if(indice >= imagens.length)
+            {
+                indice = 0;
+            }
+
+            imagem.src = imagens[indice];
+        }
+    </script>
+    <style>
+        #segue
+        {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <p>Crie uma página com um botão "Clique aqui". 
+    A cada clique, exiba quantas vezes o botão foi clicado. 
+    Quando atingir 10 cliques, exiba a mensagem “Chega, né?”</p>
+
+    <input type="button" onclick="contabilizaCliques()" value="Clique Aqui!"></input>
+    <p id="paragrafo"></p>
+
+    <hr>
+
+    <p>Crie um botão que, ao ser clicado, mostre a data e hora 
+        atual formatada (ex: 11/04/2025 14:36) em um 
+        parágrafo na página. </p>
+
+    <input type="button" onclick="mostraDataHora()" value="Exibir Data e Hora"></input>
+    <p id="pData"></p>
+    <hr>
+
+    <p>Crie um elemento &lt;div> com a frase “Me segue!”. 
+        Faça com que ela se mova acompanhando o cursor do 
+        mouse pela tela. </p>
+
+        <div id="segue">Me segue!</div>
+    <hr>
+
+    <p>Crie um campo de texto com um botão 
+        "Adicionar". Sempre que o usuário digitar
+        algo e clicar no botão, o 
+        item é adicionado a uma lista de tarefas 
+        abaixo. Adicione a opção de remover cada 
+        tarefa. </p>
+
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa"></input>
+    <input type="button" onclick="adicionarTarefa()" id="adicionar" value="Adicionar"></input>
+    <ul id="listaTarefas"></ul>
+    <hr>
+    <p>Exiba uma imagem na tela. Crie 3 botões: “Reduzir”, “Aumentar” e “Trocar imagem”. Eles devem, 
+        respectivamente, alterar o width, o height e o src da imagem. </p>
+    <img id="imagem" src="banner.jpg" alt="fonte" width="150" />
+    <br>
+    <input type="button" onclick="document.getElementById('imagem').width -= 10" value="Reduzir"></input>
+    <input type="button" onclick="document.getElementById('imagem').width += 10" value="Aumentar"></input>  
+    <input type="button" onclick="TrocarImagem()" value="Trocar Imagem"></input>
+</body>
+</html>

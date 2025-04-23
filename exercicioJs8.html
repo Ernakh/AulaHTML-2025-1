@@ -26,7 +26,7 @@
       }
 
       const total = textarea.value.length;
-      contador.textContent = `${total}/${limite}`;
+      contador.innerText = `${total}/${limite}`;
       
       if (total >= limite) {
         contador.classList.add("aviso");

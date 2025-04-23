@@ -5,23 +5,25 @@
   <title>Contador de Cliques</title>
 </head>
 <body>
-  <button id="meuBotao">Clique aqui</button>
+  <button id="meuBotao" onclick="atualizarMensagem()">Clique aqui</button>
   <p id="mensagem"></p>
 
   <script>
     let contador = 0;
 
-    const botao = document.getElementById("meuBotao");
-    const mensagem = document.getElementById("mensagem");
-
-    botao.addEventListener("click", () => {
+    function atualizarMensagem() 
+    {
       contador++;
+      
+      const botao = document.getElementById("meuBotao");
+      const mensagem = document.getElementById("mensagem");
+
       if (contador < 10) {
-        mensagem.textContent = `Você clicou ${contador} vez(es).`;
+        mensagem.innerText = 'Você clicou ' + contador + ' vez(es).';
       } else if (contador === 10) {
-        mensagem.textContent = "Chega, né?";
+        mensagem.innerText = "Chega, né?";
       }
-    });
+    };
   </script>
 </body>
 </html>
