@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #taskList {
+            margin-top: 20px;
+        }
+        #taskList li {
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de Tarefas</h1>
+
+    <label for="taskInput">Adicionar Tarefa:</label>
+    <input type="text" id="taskInput" placeholder="Digite sua tarefa">
+    <button onclick="addTask(document.getElementById('taskInput').value)">Adicionar</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        function addTask(task) {
+            if (task.trim() !== '') {
+                tasks.push(task);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                renderTasks();
+                document.getElementById('taskInput').value = ''; // Limpar o campo de entrada
+            }
+        }
+
+        function removeTask(index) {
+            tasks.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const list = document.getElementById('taskList');
+            list.innerHTML = '';
+            tasks.forEach((task, i) => {
+                const li = document.createElement('li');
+                li.textContent = task;
+                li.onclick = () => removeTask(i);
+                list.appendChild(li);
+            });
+        }
+
+        window.onload = renderTasks;
+    </script>
+
+</body>
+</html>

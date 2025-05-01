@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar e Carregar Nome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #welcomeMsg {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Salvar e Carregar Nome</h1>
+
+    <label for="nameInput">Digite seu nome:</label>
+    <input type="text" id="nameInput" placeholder="Seu nome">
+    <button onclick="saveName()">Salvar Nome</button>
+
+    <div id="welcomeMsg"></div>
+
+    <script>
+        // Salvar nome no Local Storage
+        function saveName() {
+            const name = document.getElementById('nameInput').value;
+            localStorage.setItem('username', name);
+        }
+
+        // Carregar nome salvo
+        function loadName() {
+            const savedName = localStorage.getItem('username');
+            if(savedName) {
+                document.getElementById('welcomeMsg').innerText = 'Bem-vindo, ' + savedName;
+            }
+        }
+
+        window.onload = loadName;
+    </script>
+
+</body>
+</html>
