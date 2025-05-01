@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testar Funções de Busca de CEP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #resultado {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            max-width: 500px;
+        }
+    </style>
+    <script>
+        function buscarCEPv1() {
+            const cep = document.getElementById('cep').value;
+            const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro na requisição: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    document.getElementById('resultado').innerText = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+
+        function buscarCEPv2() {
+            const cep = document.getElementById('cep').value;
+            const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    document.getElementById('resultado').innerText = JSON.stringify(data, null, 2);
+                } else {
+                    console.error('Erro na requisição:', xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error('Erro de rede.');
+            };
+
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Testar Funções de Busca de CEP</h1>
+
+    <label for="cep">Digite o CEP:</label>
+    <input type="text" id="cep" placeholder="Exemplo: 01001000">
+    
+    <br><br>
+
+    <button onclick="buscarCEPv1()">Buscar CEP v1 (Fetch)</button>
+    <button onclick="buscarCEPv2()">Buscar CEP v2 (XMLHttpRequest)</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
