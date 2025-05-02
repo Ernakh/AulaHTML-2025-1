@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria Responsiva com Flexbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fdfdfb;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    /* Container Flex da galeria */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    /* Estilo das imagens */
+    .galeria img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .galeria img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo Prático 3: Galeria Responsiva</h1>
+
+  <div class="galeria">
+    <img src="lua.jpg" alt="Imagem 1">
+    <img src="banner.jpg" alt="Imagem 2">
+    <img src="lua.jpg" alt="Imagem 3">
+    <img src="banner.jpg" alt="Imagem 4">
+    <img src="lua.jpg" alt="Imagem 5">
+  </div>
+
+</body>
+</html>

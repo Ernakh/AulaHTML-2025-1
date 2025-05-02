@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo Flexbox - Barra de Navegação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Passo 1: HTML Simples */
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+
+      /* Passo 2: Container Flex */
+      display: flex;
+
+      /* Passo 3: Alinhamento Horizontal */
+      justify-content: space-between;
+
+      /* Passo 4: Centralização Vertical */
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+
+    nav li {
+      color: white;
+      cursor: pointer;
+    }
+
+    nav li:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">MeuSite</div>
+    <ul>
+      <li>Início</li>
+      <li>Sobre</li>
+      <li>Serviços</li>
+      <li>Contato</li>
+    </ul>
+  </nav>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo Flexbox - Três Colunas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fdfdfb;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* Container Flex */
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Colunas */
+    .coluna {
+      background-color: #eaeaea;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+
+      /* Flex grow e flex-basis */
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo Prático 2: Layout de Três Colunas</h1>
+
+  <div class="container">
+    <div class="coluna">Coluna 1</div>
+    <div class="coluna">Coluna 2</div>
+    <div class="coluna">Coluna 3</div>
+  </div>
+
+</body>
+</html>
