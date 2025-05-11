@@ -51,6 +51,7 @@
                 if (xhr.status === 200) {
                     const data = JSON.parse(xhr.responseText);
                     console.log(data);
+                    console.log(data.uf);                    
                     document.getElementById('resultado').innerText = JSON.stringify(data, null, 2);
                 } else {
                     console.error('Erro na requisição:', xhr.status);
