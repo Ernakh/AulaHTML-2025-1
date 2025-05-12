@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplos de jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .negrito {
+      font-weight: bold;
+      color: red;
+    }
+    #caixa {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>1. Seletores</h2>
+  <p class="destaque">Parágrafo destacado</p>
+  <p id="unico">Parágrafo único</p>
+  <button id="btnAlterar">Alterar estilos</button>
+
+  <h2>2. Manipulação de DOM</h2>
+  <div id="container"></div>
+  <button id="inserirConteudo">Inserir conteúdo</button>
+
+  <h2>3. Eventos e Ações</h2>
+  <button id="mostrarAlerta">Clique-me</button>
+
+  <h2>4. Formulários</h2>
+  <input type="text" id="nome">
+  <button id="pegarNome">Exibir Nome</button>
+
+  <h2>5. Efeitos Visuais</h2>
+  <button id="esconder">Esconder</button>
+  <button id="mostrar">Mostrar</button>
+  <div id="caixa"></div>
+
+  <h2>6. Classes e Estilos</h2>
+  <p id="meuTexto">Texto de exemplo</p>
+  <button id="destacar">Destacar</button>
+
+  <h2>7. Percorrendo elementos</h2>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <script>
+    // 1. Seletores
+    $("#btnAlterar").click(function () {
+      $("p").css("color", "blue");
+      $(".destaque").css("font-weight", "bold");
+      $("#unico").css("text-decoration", "underline");
+    });
+
+    // 2. Manipulação de DOM
+    $("#inserirConteudo").click(function () {
+      $("#container").html("<p>Conteúdo inserido via jQuery!</p>").append("<button>Outro Botão</button>");
+    });
+
+    // 3. Eventos e Ações
+    $("#mostrarAlerta").on("click", function () {
+      alert("Você clicou no botão!");
+    });
+
+    // 4. Formulários
+    $("#pegarNome").click(function () {
+      const nome = $("#nome").val();
+      alert("Nome digitado: " + nome);
+    });
+
+    // 5. Efeitos Visuais
+    $("#esconder").click(function () {
+      $("#caixa").fadeOut();
+    });
+
+    $("#mostrar").click(function () {
+      $("#caixa").fadeIn();
+    });
+
+    // 6. Classes e Estilos
+    $("#destacar").click(function () {
+      $("#meuTexto").toggleClass("negrito");
+    });
+
+    // 7. Percorrendo elementos
+    $("li").each(function (index) {
+      $(this).append(" (índice: " + index + ")");
+    });
+  </script>
+</body>
+</html>

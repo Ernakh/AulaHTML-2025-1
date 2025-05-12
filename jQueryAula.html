@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- Seletores -->
+    <p class="destaque">Parágrafo destacado</p>
+    <p id="unico">Parágrafo único</p>
+ 
+    <script>
+    $("p").css("color", "blue");                
+    $(".destaque").css("font-weight", "bold");  
+    $("#unico").css("text-decoration", "underline");
+    </script>
+
+<hr>
+
+    <!-- Manipulação de Atributos (DOM)-->
+    <div id="container"></div>
+
+    <script>
+    $("#container").html("<p>Conteúdo inserido via jQuery!</p>");
+    $("#container").append("<button>Clique aqui</button>");
+    </script>
+
+<hr>
+    <!-- Manipulação de Eventos -->
+    <button id="mostrarAlerta">Clique-me</button>
+
+    <script>
+    $("#mostrarAlerta").on("click", function () {
+        alert("Você clicou no botão!");
+    });
+    </script>
+
+<hr>
+    <!-- Campos -->
+    <input type="text" id="nome">
+    <button id="pegarNome">Exibir Nome</button>
+
+    <script>
+    $("#pegarNome").click(function () {
+        const nome = $("#nome").val();
+        alert("Nome digitado: " + nome);
+    });
+    </script>
+
+    <hr>
+    <!-- Efeitos Visuais-->
+    <button id="esconder">Esconder</button>
+    <button id="mostrar">Mostrar</button>
+    <div id="caixa" style="width:100px; height:100px; background:red;"></div>
+
+    <script>
+    $("#esconder").click(function () {
+        $("#caixa").fadeOut();
+    });
+
+    $("#mostrar").click(function () {
+        $("#caixa").fadeIn();
+    });
+    </script>
+
+    <hr>
+    <!-- Classes e Estilos -->
+    <p id="meuTexto">Texto de exemplo</p>
+    <button id="destacar">Destacar</button>
+
+    <script>
+    $("#destacar").click(function () {
+        $("#meuTexto").toggleClass("negrito");
+    });
+    </script>
+
+    <style>
+    .negrito {
+        font-weight: bold;
+        color: red;
+    }
+    </style>
+
+    <hr>
+
+    <!-- Percorrendo elementos -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <script>
+    $("li").each(function (index) {
+        $(this).append(" (índice: " + index + ")");
+    });
+    </script>
+
+    <hr>
+
+
+</body>
+</html>
