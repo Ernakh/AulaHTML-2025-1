@@ -23,17 +23,17 @@
     <label for="nameInput">Digite seu nome:</label>
     <input type="text" id="nameInput" placeholder="Seu nome">
     <button onclick="saveName()">Salvar Nome</button>
-
+    
     <div id="welcomeMsg"></div>
-
+    
+    <button id="botaoClear" onclick="localStorage.clear()" hidden>Apagar LocalStorage</button>
     <script>
-        // Salvar nome no Local Storage
         function saveName() {
             const name = document.getElementById('nameInput').value;
             localStorage.setItem('username', name);
+            document.getElementById('botaoClear').hidden = false;
         }
 
-        // Carregar nome salvo
         function loadName() {
             const savedName = localStorage.getItem('username');
             if(savedName) {

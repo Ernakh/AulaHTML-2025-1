@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Validate</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+</head>
+<body>
+  <h2>Validação com jQuery Validate</h2>
+  <form id="meuFormulario">
+    <label>Nome: <input type="text" name="nome" required></label><br><br>
+    <label>Email: <input type="email" name="email" required></label><br><br>
+    <label>Senha: <input type="password" name="senha" required minlength="6"></label><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    $(document).ready(function() {
+      $("#meuFormulario").validate();
+    });
+  </script>
+</body>
+</html>

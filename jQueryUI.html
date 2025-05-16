@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery UI</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <style>
+    #dragme { width: 100px; height: 100px; background: #007bff; color: white; padding: 10px; cursor: move; }
+    #sortable li { margin: 5px; padding: 8px; background: #f0f0f0; list-style: none; cursor: move; }
+  </style>
+</head>
+<body>
+  <h2>jQuery UI - Exemplos</h2>
+
+  <h3>Arraste este bloco:</h3>
+  <div id="dragme">Arraste-me</div>
+
+  <h3>Ordene a lista:</h3>
+  <ul id="sortable">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h3>Accordion:</h3>
+  <div id="accordion">
+    <h3>Seção 1</h3>
+    <div><p>Conteúdo da seção 1</p></div>
+    <h3>Seção 2</h3>
+    <div><p>Conteúdo da seção 2</p></div>
+    <h3>Seção 3</h3>
+    <div><p>Conteúdo da seção 3</p></div>
+  </div>
+
+  <script>
+    $(function() {
+      $('#dragme').draggable();
+      $('#sortable').sortable();
+      $('#accordion').accordion();
+    });
+  </script>
+</body>
+</html>
