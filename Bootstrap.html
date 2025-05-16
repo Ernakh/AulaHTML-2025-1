@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bg-primary text-white text-center p-2">col-12 (100%)</div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-6 bg-success text-white text-center p-2">col-6 (50%)</div>
+            <div class="col-6 bg-success text-white text-center p-2">col-6 (50%)</div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-4 bg-warning text-dark text-center p-2">col-4 (33%)</div>
+            <div class="col-4 bg-warning text-dark text-center p-2">col-4 (33%)</div>
+            <div class="col-4 bg-warning text-dark text-center p-2">col-4 (33%)</div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-3 bg-danger text-white text-center p-2">col-3 (25%)</div>
+            <div class="col-3 bg-danger text-white text-center p-2">col-3 (25%)</div>
+            <div class="col-3 bg-danger text-white text-center p-2">col-3 (25%)</div>
+            <div class="col-3 bg-danger text-white text-center p-2">col-3 (25%)</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <button class="btn btn-primary">Botão Azul</button>
+        <button class="btn btn-success">Botão Verde</button>
+        <button class="btn btn-danger">Botão Vermelho</button>
+        <button class="btn btn-warning">Botão Amarelo</button>
+        <button class="btn btn-info">Botão Azul Claro</button>
+        <button class="btn btn-light">Botão Claro</button>
+        <button class="btn btn-dark">Botão Escuro</button>
+        <button class="btn btn-secondary">Botão Cinza</button>
+        <button class="btn btn-outline-primary">Botão Azul Contornado</button>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="alert alert-warning">Atenção!</div>
+        <div class="alert alert-success">Sucesso!</div>
+        <div class="alert alert-danger">Erro!</div>
+        <div class="alert alert-info">Informação!</div>
+    </div>
+    <hr>
+    <div class="container card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Título</h5>
+            <p class="card-text">Texto do card.</p>
+            <a href="#" class="btn btn-primary">Saiba mais</a>
+        </div>
+    </div>
+    <hr>
+    <form class="container">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <hr>
+     <!-- Botão para abrir o Modal -->
+      <div class="container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
+            Abrir Modal
+        </button>
+      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                <h5 class="modal-title" id="meuModalLabel">Título do Modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body">
+                Este é o conteúdo do modal. Você pode colocar qualquer coisa aqui: texto, formulários, imagens, etc.
+                </div>
+
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>
