@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Responsivo - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">Meu Painel</h1>
+    <button class="bg-blue-800 hover:bg-blue-700 px-4 py-2 rounded">Sair</button>
+  </header>
+
+  <!-- Layout principal: Sidebar + Conteúdo -->
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="bg-white w-64 p-4 shadow-md hidden md:block">
+      <nav class="space-y-4">
+        <a href="#" class="block text-blue-600 font-semibold hover:underline">Dashboard</a>
+        <a href="#" class="block hover:underline">Relatórios</a>
+        <a href="#" class="block hover:underline">Usuários</a>
+        <a href="#" class="block hover:underline">Configurações</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-1 p-6">
+      <h2 class="text-2xl font-semibold mb-4">Resumo</h2>
+
+      <!-- Grid de Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Usuários</h3>
+          <p>1.200 ativos</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Vendas</h3>
+          <p>R$ 75.000,00</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Visitas</h3>
+          <p>24.300 acessos</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center p-4 text-sm">
+    © 2025 - Meu Painel Admin - Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
